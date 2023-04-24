@@ -9,6 +9,11 @@ terraform {
       version = "~> 2.1"
     }
   }
+  backend "s3" {
+    bucket = "myfc-tfstate-bucket"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {
